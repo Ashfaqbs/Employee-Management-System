@@ -3,6 +3,7 @@ package com.ashfaq.emsbackend.controller;
 import com.ashfaq.emsbackend.dto.EmployeeDTO;
 import com.ashfaq.emsbackend.entity.Employee;
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO>creteEmployee(EmployeeDTO employeeDTO)
     {
        EmployeeDTO employeeDTO1=  employeeService.createEmployee(employeeDTO);
-        return new ResponseEntity(employeeDTO1, HttpStatusCode.c);
+        return new ResponseEntity(employeeDTO1, HttpStatus.CREATED);
     }
 
 
