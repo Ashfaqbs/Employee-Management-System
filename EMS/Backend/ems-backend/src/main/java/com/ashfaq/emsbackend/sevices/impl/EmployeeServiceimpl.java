@@ -1,4 +1,6 @@
 package com.ashfaq.emsbackend.sevices.impl;
 
-public class EmployeeServiceimpl {
+import com.ashfaq.emsbackend.dto.EmployeeDTO;
+
+public class EmployeeServiceimpl implements EmployeeDTO {
 }
