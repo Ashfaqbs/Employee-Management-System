@@ -4,11 +4,10 @@ import com.ashfaq.emsbackend.entity.Employee;
 
 public class EmployeeMapper {
 
-    public static EmployeeDTO mapToEmployeeDTO(Employee employee)
-    {
+    public static EmployeeDTO mapToEmployeeDTO(Employee employee) {
 
 
         return new EmployeeDTO(
-          employee.getId(),employee.getFirstName(),employee.getLastName(),employee.getEmail());
+                employee.getId(), employee.getFirstName(), employee.getLastName(), employee.getEmail());
     }
 }
