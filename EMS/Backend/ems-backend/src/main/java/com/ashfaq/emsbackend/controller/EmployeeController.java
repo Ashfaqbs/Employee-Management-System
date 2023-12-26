@@ -10,6 +10,10 @@ public class EmployeeController {
 
     private IEmployeeService employeeService;
 
-    
+    //Autowiring with the constructor
+    public EmployeeController(IEmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
 
 }
