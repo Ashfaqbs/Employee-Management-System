@@ -18,9 +18,9 @@ public class EmployeeController {
     private IEmployeeService employeeService;
 
     //Autowiring with the constructor
-//    public EmployeeController(IEmployeeService employeeService) {
-//        this.employeeService = employeeService;
-//    }
+    public EmployeeController(IEmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     //Build Add Employee REST API
     @PostMapping
