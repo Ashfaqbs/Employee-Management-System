@@ -23,4 +23,9 @@ private EmployeeRepository employeeRepository;
         employeeRepository.save(employee);
         return employeeDTO;
     }
+
+    @Override
+    public EmployeeDTO createEmployee(Employee employee) {
+        return null;
+    }
 }
