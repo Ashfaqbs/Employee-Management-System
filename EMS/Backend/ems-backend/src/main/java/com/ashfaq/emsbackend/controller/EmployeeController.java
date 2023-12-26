@@ -23,7 +23,7 @@ public class EmployeeController {
 //    }
 
     //Build Add Employee REST API
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<EmployeeDTO>creteEmployee(@RequestBody EmployeeDTO employeeDTO)
     {
        EmployeeDTO employeeDTO1=  employeeService.createEmployee(employeeDTO);
