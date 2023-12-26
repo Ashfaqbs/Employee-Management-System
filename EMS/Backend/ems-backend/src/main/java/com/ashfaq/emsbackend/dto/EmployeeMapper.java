@@ -9,7 +9,7 @@ public class EmployeeMapper {
 
 
         return new EmployeeDTO(
-          employee.ge
+          employee.getID(),employee.ge
         );
     }
 }
