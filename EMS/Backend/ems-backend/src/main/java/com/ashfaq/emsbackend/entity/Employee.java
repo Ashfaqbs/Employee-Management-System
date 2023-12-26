@@ -19,7 +19,7 @@ public class Employee {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email_id")
+    @Column(name = "email_id",nullable = false,unique = true)//so column name will be email_id , and it cannot be null and it should be unique
     private String email;
 
 }
