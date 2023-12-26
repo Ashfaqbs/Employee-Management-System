@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "")
+@Table(name = "employees")
 public class Employee {
 
     private long id;
