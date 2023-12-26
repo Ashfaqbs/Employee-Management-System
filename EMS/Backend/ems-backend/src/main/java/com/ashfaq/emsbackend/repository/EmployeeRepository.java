@@ -1,2 +1,4 @@
-package com.ashfaq.emsbackend.repository;public interface EmployeeRepository {
+package com.ashfaq.emsbackend.repository;
+
+public interface EmployeeRepository {
 }
