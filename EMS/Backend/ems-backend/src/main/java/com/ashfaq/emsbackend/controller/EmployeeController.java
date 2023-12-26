@@ -1,2 +1,10 @@
-package com.ashfaq.emsbackend.controller;public class EmployeeController {
+package com.ashfaq.emsbackend.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+
+
+
 }
