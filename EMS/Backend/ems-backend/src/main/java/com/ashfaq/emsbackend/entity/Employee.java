@@ -1,2 +1,4 @@
-package com.ashfaq.emsbackend.entity;public class Employee {
+package com.ashfaq.emsbackend.entity;
+
+public class Employee {
 }
