@@ -1,6 +1,7 @@
 package com.ashfaq.emsbackend.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-
+@Table(name = "")
 public class Employee {
 
     private long id;
