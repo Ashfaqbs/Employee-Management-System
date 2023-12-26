@@ -1,6 +1,7 @@
 package com.ashfaq.emsbackend.controller;
 
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,8 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    //Build Add Employee 
+    //Build Add Employee REST API
+    public ResponseEntity
 
 
 }
