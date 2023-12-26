@@ -1,6 +1,7 @@
 package com.ashfaq.emsbackend.sevices.impl;
 
 import com.ashfaq.emsbackend.dto.EmployeeDTO;
+import com.ashfaq.emsbackend.dto.EmployeeMapper;
 import com.ashfaq.emsbackend.entity.Employee;
 import com.ashfaq.emsbackend.repository.EmployeeRepository;
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
@@ -16,9 +17,10 @@ private EmployeeRepository employeeRepository;
     }
 
     @Override
-    public EmployeeDTO createEmployee(Employee) {
+    public EmployeeDTO createEmployee(EmployeeDTO employeeDTO) {
 
-        employeeRepository.
+        Employee employee= EmployeeMapper.mapToEmployee(employeeDTO);
+        employeeRepository.save(employee);
         return null;
     }
 }
