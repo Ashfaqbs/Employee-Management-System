@@ -21,6 +21,6 @@ private EmployeeRepository employeeRepository;
 
         Employee employee= EmployeeMapper.mapToEmployee(employeeDTO);
         employeeRepository.save(employee);
-        return null;
+        return employeeDTO;
     }
 }
