@@ -1,5 +1,6 @@
 package com.ashfaq.emsbackend.controller;
 
+import com.ashfaq.emsbackend.dto.EmployeeDTO;
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class EmployeeController {
     }
 
     //Build Add Employee REST API
-    public ResponseEntity
+    public ResponseEntity<EmployeeDTO>
 
 
 }
