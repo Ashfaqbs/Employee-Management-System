@@ -6,7 +6,7 @@ import com.ashfaq.emsbackend.entity.Employee;
 public interface IEmployeeService {
 
 
-    EmployeeDTO createEmployee(Employee employee);
+    EmployeeDTO createEmployee(EmployeeDTO employeeDTO);
 
 
 
