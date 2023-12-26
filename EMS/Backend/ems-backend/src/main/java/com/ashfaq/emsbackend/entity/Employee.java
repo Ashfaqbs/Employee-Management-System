@@ -3,5 +3,6 @@ package com.ashfaq.emsbackend.entity;
 public class Employee {
 
     private long id;
-    private sSt
+    private sString firstName;
+    private String  
 }
