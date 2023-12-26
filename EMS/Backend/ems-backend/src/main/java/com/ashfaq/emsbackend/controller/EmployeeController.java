@@ -21,8 +21,8 @@ public class EmployeeController {
     //Build Add Employee REST API
     public ResponseEntity<EmployeeDTO>creteEmployee(EmployeeDTO employeeDTO)
     {
-       Employee  employeeService.createEmployee(employeeDTO);
-        return ResponseEntity();
+       EmployeeDTO employeeDTO1=  employeeService.createEmployee(employeeDTO);
+        return new ResponseEntity();
     }
 
 
