@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeServiceimpl implements IEmployeeService {
 
-private EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     public EmployeeServiceimpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -19,9 +19,8 @@ private EmployeeRepository employeeRepository;
     @Override
     public EmployeeDTO createEmployee(EmployeeDTO employeeDTO) {
 
-        Employee employee= EmployeeMapper.mapToEmployee(employeeDTO);
+        Employee employee = EmployeeMapper.mapToEmployee(employeeDTO);
         employeeRepository.save(employee);
-
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
