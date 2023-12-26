@@ -9,7 +9,7 @@ public class EmployeeMapper {
 
 
         return new EmployeeDTO(
-          employee.getID(),employee
+          employee.getId(),employee.getFirstName(),employee.getLastName()
         );
     }
 }
