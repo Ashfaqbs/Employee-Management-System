@@ -9,7 +9,6 @@ public class EmployeeMapper {
 
 
         return new EmployeeDTO(
-          employee.getId(),employee.getFirstName(),employee.getLastName()
-        );
+          employee.getId(),employee.getFirstName(),employee.getLastName(),employee.getEmail());
     }
 }
