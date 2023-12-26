@@ -19,7 +19,7 @@ public class EmployeeController {
     private EmployeeServiceimpl employeeService;
 
     //Autowiring with the constructor
-    public EmployeeController(IEmployeeService employeeService) {
+    public EmployeeController(EmployeeServiceimpl employeeService) {
         this.employeeService = employeeService;
     }
 
