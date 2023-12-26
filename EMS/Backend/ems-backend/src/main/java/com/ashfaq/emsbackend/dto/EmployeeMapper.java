@@ -8,6 +8,8 @@ public class EmployeeMapper {
     {
 
 
-        return new 
+        return new EmployeeDTO(
+          employee.ge
+        );
     }
 }
