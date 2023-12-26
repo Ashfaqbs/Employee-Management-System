@@ -18,7 +18,7 @@ public class EmployeeController {
     private IEmployeeService employeeService;
     // Note:
 //    We have autowired a interface and called its method and in run time its implementation
-//    class i.e EmployeeServiceimpl will be called 
+//    class i.e EmployeeServiceimpl will be called
 
     //Autowiring with the constructor
     public EmployeeController(IEmployeeService employeeService) {
