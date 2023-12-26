@@ -5,6 +5,6 @@ import com.ashfaq.emsbackend.dto.EmployeeDTO;
 public interface IEmployeeService {
 
 
-    EmployeeDTO 
+    EmployeeDTO createEmployee()
 
 }
