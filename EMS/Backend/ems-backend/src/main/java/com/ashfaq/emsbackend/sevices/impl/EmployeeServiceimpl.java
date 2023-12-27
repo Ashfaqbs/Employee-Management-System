@@ -41,8 +41,8 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public List<EmployeeDTO> getAllEmployee() {
       List<Employee> employees=  employeeRepository.findAll();
-      
-        return employees.isEmpty() ? new ArrayList<>() : employees;
+
+        return employees.parallelStream().map(data -> EmployeeMapper.mapToEmployeeDTO(data)).toList();
     }
 
 
