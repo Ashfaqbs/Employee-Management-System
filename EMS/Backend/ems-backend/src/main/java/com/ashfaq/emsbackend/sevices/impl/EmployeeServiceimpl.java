@@ -55,4 +55,12 @@ public class EmployeeServiceimpl implements IEmployeeService {
                 .toList();
     }
 
+    @Override
+    public EmployeeDTO updateEmployee(Long emplId, EmployeeDTO employeeDTO) {
+
+        
+
+
+    }
+
 }
