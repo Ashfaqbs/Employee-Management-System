@@ -30,7 +30,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
 
     @Override
     public EmployeeDTO getEmployeeById(long id) {
-        Employee employee = employeeRepository.findById(id).get();
+        Employee employee = employeeRepository.findById(id);
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
