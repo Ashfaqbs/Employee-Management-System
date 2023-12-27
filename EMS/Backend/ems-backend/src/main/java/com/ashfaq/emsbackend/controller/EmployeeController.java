@@ -39,9 +39,9 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeDTO1, HttpStatus.FOUND);
     }
     @GetMapping
-    public ResponseEntity<List<Employee>>getAllEmployee()
+    public ResponseEntity<List<EmployeeDTO>>getAllEmployee()
     {
-        List<Employee> employeeDTO1=  employeeService.getAllEmployeeById();
+        List<EmployeeDTO> employeeDTO1=  employeeService.getAllEmployee();
         return new ResponseEntity<>(employeeDTO1, HttpStatus.FOUND);
     }
 
