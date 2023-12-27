@@ -58,7 +58,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public EmployeeDTO updateEmployee(Long emplId, EmployeeDTO employeeDTO) {
 
-        
+        if()
 
 
     }
