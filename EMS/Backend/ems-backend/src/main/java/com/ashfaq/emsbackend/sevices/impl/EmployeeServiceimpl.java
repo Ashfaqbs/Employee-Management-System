@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceimpl implements IEmployeeService {
@@ -42,7 +43,8 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public List<EmployeeDTO> getAllEmployee() {
       List<Employee> employees=  employeeRepository.findAll();
 
-        return employees.parallelStream().map(EmployeeMapper::mapToEmployeeDTO).toList();
+        return employees.parallelStream().map(data -> EmployeeMapper.mapToEmployeeDTO(data)).
+                collect(Collectors.toList());
     }
 
 
