@@ -62,6 +62,9 @@ public class EmployeeServiceimpl implements IEmployeeService {
         employee.setFirstName(employeeDTO.getFirstName());
         employee.setLastName(employee.getLastName());
         employee.setEmail(employee.getEmail());
+
+
+        return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
 }
