@@ -31,7 +31,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeDTO1, HttpStatus.CREATED);
     }
 
-    //
+    //Build Get Employee REST API
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDTO>getEmployeeById(@PathVariable long id)
     {
