@@ -1,7 +1,6 @@
 package com.ashfaq.emsbackend.controller;
 
 import com.ashfaq.emsbackend.dto.EmployeeDTO;
-import com.ashfaq.emsbackend.entity.Employee;
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
