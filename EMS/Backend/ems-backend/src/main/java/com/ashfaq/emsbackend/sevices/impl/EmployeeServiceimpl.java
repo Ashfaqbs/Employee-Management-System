@@ -59,8 +59,9 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public EmployeeDTO updateEmployee(Long emplId, EmployeeDTO employeeDTO) {
 
         Employee employee = employeeRepository.findById(emplId).orElseThrow(()-> new ResourceNotFoundException("Employee with id : "+ emplId +" is not found"));
-
-
+        employee.setFirstName(employeeDTO.getFirstName());
+        employee.setLastName(employee.getLastName());
+        employee.setEmail(employee.getEmail());
     }
 
 }
