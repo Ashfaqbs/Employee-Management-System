@@ -16,4 +16,6 @@ public interface IEmployeeService {
 
     EmployeeDTO updateEmployee(Long emplId,EmployeeDTO employeeDTO);
 
+    void 
+
 }
