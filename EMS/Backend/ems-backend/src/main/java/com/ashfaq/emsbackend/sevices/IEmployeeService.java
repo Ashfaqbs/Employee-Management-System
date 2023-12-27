@@ -14,6 +14,6 @@ public interface IEmployeeService {
 
     List<EmployeeDTO> getAllEmployee();
 
-    EmployeeDTO updateEmployee(EmployeeDTO employeeDTO,Long emplLong);
+    EmployeeDTO updateEmployee(EmployeeDTO employeeDTO,Long emplId);
 
 }
