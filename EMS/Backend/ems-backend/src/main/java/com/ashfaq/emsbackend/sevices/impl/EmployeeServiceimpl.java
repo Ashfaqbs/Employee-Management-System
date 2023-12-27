@@ -58,7 +58,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public EmployeeDTO updateEmployee(Long emplId, EmployeeDTO employeeDTO) {
 
-        if(employeeRepository.findById(emplId))
+        Employee employee = employeeRepository.findById(emplId).orElseThrow(()-> new ResourceNotFoundException("Employee with id : "+ emplId +" is not found"));
 
 
     }
