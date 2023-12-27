@@ -6,10 +6,9 @@ import com.ashfaq.emsbackend.sevices.IEmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/employees")
@@ -30,8 +29,20 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO>creteEmployee(@RequestBody EmployeeDTO employeeDTO)
     {
        EmployeeDTO employeeDTO1=  employeeService.createEmployee(employeeDTO);
-        return new ResponseEntity(employeeDTO1, HttpStatus.CREATED);
+        return new ResponseEntity<>(employeeDTO1, HttpStatus.CREATED);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<EmployeeDTO>getEmployeeById(@PathVariable long id)
+    {
+        EmployeeDTO employeeDTO1=  employeeService.getEmployeeById(id);
+        return employeeDTO1!=null ? new ResponseEntity<>(employeeDTO1, HttpStatus.FOUND) : new ResponseEntity<>(employeeDTO1, HttpStatus.NOT_FOUND);
+    }
+    @GetMapping
+    public ResponseEntity<List<Employee>>getAllEmployee()
+    {
+        List<Employee> employeeDTO1=  employeeService.getAllEmployeeById();
+        return new ResponseEntity<>(employeeDTO1, HttpStatus.FOUND);
+    }
 
 }
