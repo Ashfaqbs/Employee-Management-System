@@ -3,6 +3,7 @@ package com.ashfaq.emsbackend.sevices.impl;
 import com.ashfaq.emsbackend.dto.EmployeeDTO;
 import com.ashfaq.emsbackend.dto.EmployeeMapper;
 import com.ashfaq.emsbackend.entity.Employee;
+import com.ashfaq.emsbackend.exception.ResourceNotFoundException;
 import com.ashfaq.emsbackend.repository.EmployeeRepository;
 import com.ashfaq.emsbackend.sevices.IEmployeeService;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public EmployeeDTO getEmployeeById(long id) {
         Employee employee = employeeRepository.findById(id).
-                or();
+                or(ResourceNotFoundException);
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
