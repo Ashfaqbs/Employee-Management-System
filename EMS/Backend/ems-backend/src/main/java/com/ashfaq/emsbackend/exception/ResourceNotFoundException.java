@@ -1,4 +1,5 @@
 package com.ashfaq.emsbackend.exception;
 
-public class ResourceNotFoundException extends  {
+public class ResourceNotFoundException extends  RuntimeException{
+
 }
