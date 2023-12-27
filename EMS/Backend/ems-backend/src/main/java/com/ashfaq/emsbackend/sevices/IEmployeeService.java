@@ -12,6 +12,6 @@ public interface IEmployeeService {
 
     EmployeeDTO getEmployeeById(long id);
 
-    List<Employee> getAllEmployeeById();
+    List<EmployeeDTO> getAllEmployee();
 
 }
