@@ -63,8 +63,8 @@ public class EmployeeServiceimpl implements IEmployeeService {
         employee.setLastName(employee.getLastName());
         employee.setEmail(employee.getEmail());
 
-        employeeRepository.save(employee);//save or update if id exists update else save
-        return EmployeeMapper.mapToEmployeeDTO(employee);
+        Employee updatedEmployee =employeeRepository.save(employee);//save or update if id exists update else save
+        return EmployeeMapper.mapToEmployeeDTO(updatedEmployee);
     }
 
 }
