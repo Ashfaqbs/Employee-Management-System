@@ -41,10 +41,10 @@ public class EmployeeServiceimpl implements IEmployeeService {
 
     @Override
     public List<EmployeeDTO> getAllEmployee() {
-      List<Employee> employees=  employeeRepository.findAll();
+        List<Employee> employees=  employeeRepository.findAll();
 
-        return employees.parallelStream().map(EmployeeMapper::mapToEmployeeDTO)
-                .toList();
+        return employees.parallelStream().map(data -> EmployeeMapper.mapToEmployeeDTO(data)).
+                collect(Collectors.toList());
     }
 
 
