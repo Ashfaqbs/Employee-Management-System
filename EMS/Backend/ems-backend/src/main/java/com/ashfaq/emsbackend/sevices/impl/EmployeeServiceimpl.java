@@ -45,7 +45,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
 
         return employees.parallelStream().map(data -> EmployeeMapper.mapToEmployeeDTO(data)).
                 collect(Collectors.toList());
-    }
+    }   
 
 
 }
