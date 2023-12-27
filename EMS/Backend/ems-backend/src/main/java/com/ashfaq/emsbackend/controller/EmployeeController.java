@@ -45,4 +45,8 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeDTO1, HttpStatus.FOUND);
     }
 
+    //Build update employee Rest API
+    @PutMapping("/")
+    public ResponseEntity<EmployeeDTO>
+
 }
