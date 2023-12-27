@@ -32,7 +32,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public EmployeeDTO getEmployeeById(long id) {
         Employee employee = employeeRepository.findById(id).
-                or(ResourceNotFoundException);
+                or(() -> ResourceNotFoundException(""));
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
