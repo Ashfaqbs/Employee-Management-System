@@ -42,7 +42,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public List<EmployeeDTO> getAllEmployee() {
       List<Employee> employees=  employeeRepository.findAll();
 
-        return employees.parallelStream().map(data -> EmployeeMapper.mapToEmployeeDTO(data)).toList();
+        return employees.parallelStream().map(EmployeeMapper::mapToEmployeeDTO).toList();
     }
 
 
