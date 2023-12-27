@@ -57,7 +57,7 @@ public class EmployeeController {
     public ResponseEntity<String> deleteEmployeeById(@PathVariable("id") long id)
     {
          employeeService.deleteByIdEmployee(id);
-        return new ResponseEntity<>(HttpStatus.);
+        return  ResponseEntity.ok("Employee Deleted Successfully : "+ id);
     }
 
 
