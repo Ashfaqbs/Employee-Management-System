@@ -34,7 +34,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public EmployeeDTO getEmployeeById(long id) {
         Employee employee = employeeRepository.findById(id).
                 orElseThrow(
-                        () -> new ResourceNotFoundException("Employee with ID: " + id +" is not found in DB")
+                        () -> new ResourceNotFoundException("Employee with ID: " + id + " is not found in DB")
                 );
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
@@ -49,7 +49,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
 
     @Override
     public List<EmployeeDTO> getAllEmployee() {
-        List<Employee> employees=  employeeRepository.findAll();
+        List<Employee> employees = employeeRepository.findAll();
 
         return employees.parallelStream().map(EmployeeMapper::mapToEmployeeDTO)
                 .toList();
@@ -58,12 +58,12 @@ public class EmployeeServiceimpl implements IEmployeeService {
     @Override
     public EmployeeDTO updateEmployee(Long emplId, EmployeeDTO employeeDTO) {
 
-        Employee employee = employeeRepository.findById(emplId).orElseThrow(()-> new ResourceNotFoundException("Employee with id : "+ emplId +" is not found"));
+        Employee employee = employeeRepository.findById(emplId).orElseThrow(() -> new ResourceNotFoundException("Employee with id : " + emplId + " is not found"));
         employee.setFirstName(employeeDTO.getFirstName());
         employee.setLastName(employee.getLastName());
         employee.setEmail(employee.getEmail());
 
-
+        employeeRepository.save(employee);//save or update if id exists update else save
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
 
