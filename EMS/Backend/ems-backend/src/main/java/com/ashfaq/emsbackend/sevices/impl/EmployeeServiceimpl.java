@@ -63,7 +63,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
         employee.setLastName(employee.getLastName());
         employee.setEmail(employee.getEmail());
 
-        Employee updatedEmployee =employeeRepository.save(employee);//save or update if id exists update else save
+        Employee updatedEmployee = employeeRepository.save(employee);//save or update if id exists update else save
         return EmployeeMapper.mapToEmployeeDTO(updatedEmployee);
     }
 
@@ -71,6 +71,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public void deleteByIdEmployee(long empId) {
         Employee employee = employeeRepository.findById(empId).orElseThrow(() -> new ResourceNotFoundException("Employee with id : " + empId + " is not found"));
 
+        employeeRepository.deleteById(empId);
 
     }
 
