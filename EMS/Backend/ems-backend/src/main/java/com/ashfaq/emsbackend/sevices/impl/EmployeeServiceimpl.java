@@ -33,7 +33,7 @@ public class EmployeeServiceimpl implements IEmployeeService {
     public EmployeeDTO getEmployeeById(long id) {
         Employee employee = employeeRepository.findById(id).
                 orElseThrow(
-                        () -> new ResourceNotFoundException()ResourceNotFoundException("Employee with ID: " + id +" is not found in DB")
+                        () -> new ResourceNotFoundException("Employee with ID: " + id +" is not found in DB")
                 );
         return EmployeeMapper.mapToEmployeeDTO(employee);
     }
