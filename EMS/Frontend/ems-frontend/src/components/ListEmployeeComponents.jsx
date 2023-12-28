@@ -42,15 +42,10 @@ useEffect(() => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                   
 
                     {
-                        sampleData.map((data) => (
+                        tableData.map((data) => (
                             <tr key={data.id}>
                                 <th scope="row">{data.id}</th>
                                 <td>{data.firstName}</td>
