@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const ListEmployeeComponent = () => {
 
-const [first, setfirst] = useState(second)
+const [tableData, settableData] = useState([])
+
+useEffect(() => {
+  
+
+  
+}, [])
+
 
     const sampleData = [
         { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com" },
