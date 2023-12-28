@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(originPatterns = "*")
 @RestController
 @RequestMapping("api/v1/employees")
 public class EmployeeController {
