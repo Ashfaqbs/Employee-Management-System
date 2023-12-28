@@ -46,15 +46,15 @@ const sampleData=[
 
 //         ))
 
-sampleData.map(data=> 
+sampleData.map((data)=>{ 
     return {
         <tr>
-        //     <th scope="row">1</th>
-        //     <td>Mark</td>
-        //     <td>Otto</td>
-        //     <td>@mdo</td>
-        //   </tr>
-    }
+            <th scope="row">{data.id}</th>
+            <td>{data.id}</td>
+            <td>{data.id}</td>
+            <td>{data.email}</td>
+          </tr>
+    }}
     )
 
     }
