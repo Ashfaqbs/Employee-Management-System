@@ -18,7 +18,7 @@ const ListEmployeeComponent = () => {
 
     return (
         <>
-            <table className="table">
+            <table className="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
