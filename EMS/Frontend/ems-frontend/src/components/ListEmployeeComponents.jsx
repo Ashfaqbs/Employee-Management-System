@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { listEmployees } from '../Services/EmployeeService'
+import { listEmployees ,getListOfAllEmp} from '../Services/EmployeeService'
 
 const ListEmployeeComponent = () => {
 
@@ -13,17 +13,21 @@ const ListEmployeeComponent = () => {
         //     console.log(data)
         // });
 
-        listEmployees().
-        then((response) => {
-            console.log(response.data)
-            settableData(response.data)
-        }
-        )
-            .catch(
+        // listEmployees().
+        // then((response) => {
+        //     console.log(response.data)
+        //     settableData(response.data)
+        // }
+        // )
+        //     .catch(
 
-                error => { console.log(error) }
+        //         error => { console.log(error) }
 
-            );
+        //     );
+
+        getListOfAllEmp.then(response => {
+            
+        })
 
     }, [])
 
