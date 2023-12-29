@@ -13,9 +13,8 @@ useEffect(() => {
     //     console.log(data)
     // });
 
-//    const data=  listEmployees;
+ listEmployees().then(response => settableData(response.data)).catch(error => console.log(error));
 
-//    settableData(data)
 }, [])
 
 
