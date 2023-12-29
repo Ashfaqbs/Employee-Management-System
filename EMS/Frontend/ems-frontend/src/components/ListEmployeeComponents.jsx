@@ -13,7 +13,11 @@ useEffect(() => {
     //     console.log(data)
     // });
 
- listEmployees().then(response => settableData(response.data)).catch(error => console.log(error));
+ listEmployees().then((response) =>
+  
+ settableData(response.data)
+  )
+  .catch(error => console.log(error));
 
 }, [])
 
