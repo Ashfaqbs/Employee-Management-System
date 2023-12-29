@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { listEmployees ,getListOfAllEmp} from '../Services/EmployeeService'
+import { listEmployees } from '../Services/EmployeeService'
 
 const ListEmployeeComponent = () => {
 
@@ -25,7 +25,7 @@ const ListEmployeeComponent = () => {
 
         //     );
 
-        getListOfAllEmp.then(response => {
+        listEmployees.then(response => {
             console.log(response)
         }).catch(error => {
             console.error("error  :" ,error)
