@@ -28,7 +28,7 @@ const ListEmployeeComponent = () => {
         listEmployees.then((response) => {
             console.log(response)
         }).catch((error) => {
-            console.error("error  :" , error)
+            console.error("error  : " , error)
         })
 
     }, [])
