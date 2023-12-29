@@ -1,16 +1,19 @@
 import React, { useEffect,useState } from 'react'
+import { listEmployees } from '../Services/EmployeeService'
 
 const ListEmployeeComponent = () => {
 
 const [tableData, settableData] = useState([])
 
 useEffect(() => {
-    fetch('http://localhost:8080/api/v1/employees')           //api for the get request
-    .then(response => response.json())
-    .then((data) =>{
-         settableData(data)
-        console.log(data)
-    });
+    // fetch('http://localhost:8080/api/v1/employees')           //api for the get request
+    // .then(response => response.json())
+    // .then((data) =>{
+    //      settableData(data)
+    //     console.log(data)
+    // });
+
+    listEmployees()
 
   
 }, [])
