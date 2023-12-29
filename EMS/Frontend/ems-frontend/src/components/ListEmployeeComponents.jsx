@@ -1,25 +1,29 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { listEmployees } from '../Services/EmployeeService'
 
 const ListEmployeeComponent = () => {
 
-const [tableData, settableData] = useState([])
+    const [tableData, settableData] = useState([])
 
-useEffect(() => {
-    // fetch('http://localhost:8080/api/v1/employees')           //api for the get request
-    // .then(response => response.json())
-    // .then((data) =>{
-    //      settableData(data)
-    //     console.log(data)
-    // });
+    useEffect(() => {
+        // fetch('http://localhost:8080/api/v1/employees')           //api for the get request
+        // .then(response => response.json())
+        // .then((data) =>{
+        //      settableData(data)
+        //     console.log(data)
+        // });
 
- listEmployees().then((response) =>
-  
- settableData(response.data)
-  )
-  .catch(error => console.log(error));
+        listEmployees().then((response) => {
+            settableData(response.data)
+        }
+        )
+            .catch(
 
-}, [])
+                error => { console.log(error) }
+
+            );
+
+    }, [])
 
 
     const sampleData = [
@@ -48,7 +52,7 @@ useEffect(() => {
                     </tr>
                 </thead>
                 <tbody>
-                   
+
 
                     {
                         tableData.map((data) => (
