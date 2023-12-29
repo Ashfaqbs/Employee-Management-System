@@ -13,7 +13,9 @@ const ListEmployeeComponent = () => {
         //     console.log(data)
         // });
 
-        listEmployees().then((response) => {
+        listEmployees().
+        then((response) => {
+            console.log(response.data)
             settableData(response.data)
         }
         )
