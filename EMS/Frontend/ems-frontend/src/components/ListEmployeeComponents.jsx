@@ -14,7 +14,7 @@ const ListEmployeeComponent = () => {
         // });
 
         listEmployees().then((response) => {
-            console.log(response)
+            settableData(response.data)
         }).catch((error) => {
             console.error(error);
         })
