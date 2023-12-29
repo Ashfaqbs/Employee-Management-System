@@ -25,10 +25,10 @@ const ListEmployeeComponent = () => {
 
         //     );
 
-        listEmployees.then(response => {
+        listEmployees.then((response) => {
             console.log(response)
-        }).catch(error => {
-            console.error("error  :" ,error)
+        }).catch((error) => {
+            console.error("error  :" , error)
         })
 
     }, [])
