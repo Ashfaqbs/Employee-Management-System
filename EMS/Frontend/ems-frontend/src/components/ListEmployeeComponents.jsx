@@ -13,9 +13,9 @@ useEffect(() => {
     //     console.log(data)
     // });
 
-   const data=  listEmployees();
+//    const data=  listEmployees;
 
-   settableData(data)
+//    settableData(data)
 }, [])
 
 
