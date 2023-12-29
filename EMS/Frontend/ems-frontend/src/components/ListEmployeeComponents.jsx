@@ -28,7 +28,16 @@ const ListEmployeeComponent = () => {
         listEmployees().then((response) => {
             console.log(response)
         }).catch((error) => {
-            console.error("error  : " , error)
+            if (error.response && error.response.status === 302) {
+                // Handle redirection
+                console.log('Redirecting...');
+                const redirectUrl = error.response.headers.location;
+                console.log('Redirect URL:', redirectUrl);
+                // Perform the redirection using window.location or any other method
+              } else {
+                // Handle other errors
+                console.error(error);
+              }
         })
 
     }, [])
