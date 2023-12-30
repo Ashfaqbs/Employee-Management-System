@@ -7,13 +7,19 @@ const ListEmployeeComponent = () => {
   const [tableData, settableData] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
 
+  //adding loader till the data is fetched 
+  const [loading, setLoading] = useState(true); // Add loading state
+
+
   useEffect(() => {
     listEmployees()
       .then((response) => {
         settableData(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false);
       });
   }, []);
 
@@ -49,6 +55,12 @@ const ListEmployeeComponent = () => {
     });
     return sortedArray;
   };
+
+  if (loading) {
+    // Render a loading spinner or skeleton screen while data is being fetched
+    return <div>Loading...</div>; // You can replace this with a spinner or skeleton component
+  }
+
 
   return (
     <>
