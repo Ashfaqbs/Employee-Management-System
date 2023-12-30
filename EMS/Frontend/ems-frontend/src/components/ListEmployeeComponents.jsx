@@ -38,36 +38,40 @@ const ListEmployeeComponent = () => {
 
     return (
         <>
-           <h2 className='text-center'>List of Employees</h2>
 
-            <table className="table table-dark">
-             
-                <thead>
-                    <tr>
-                        <th scope="col">Sl No</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Email</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <section className=''>
+                <h2 className='text-center'>List of Employees</h2>
+
+                <table className="table table-dark">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Sl No</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
 
-                    {
-                        tableData.map((data) => (
-                            <tr key={data.id}>
-                                <th scope="row">{data.id}</th>
-                                <td>{data.firstName}</td>
-                                <td>{data.lastName}</td>
-                                <td>{data.email}</td>
-                            </tr>
-                        )
-                        )
+                        {
+                            tableData.map((data) => (
+                                <tr key={data.id}>
+                                    <th scope="row">{data.id}</th>
+                                    <td>{data.firstName}</td>
+                                    <td>{data.lastName}</td>
+                                    <td>{data.email}</td>
+                                </tr>
+                            )
+                            )
 
-                    }
+                        }
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </section>
+
 
         </>
     )
