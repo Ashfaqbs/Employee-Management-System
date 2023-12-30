@@ -4,12 +4,14 @@ import HelloWorld from './components/HelloWorld'
 import ListEmployeeComponent from './components/ListEmployeeComponents'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import NavbarComponent from './components/NavbarComponent'
 
 function App() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <NavbarComponent/>
     <HelloWorld/>
     <ListEmployeeComponent/>
     <Footer/>
