@@ -44,6 +44,10 @@ public class EmployeeController {
         List<EmployeeDTO> employeeDTO1=  employeeService.getAllEmployee();
         return new ResponseEntity<>(employeeDTO1, HttpStatus.OK);
     }
+    //Note when we ere returning HttpStatus.Found i.e status code will be 302 and for the above get and getall emp API's
+    //we are giving this and while calling from frontEnd , using fetch we were able to get the data and render in UI
+    //but when using Axios and calling this we were not able to get the data and it we going in catch block and in error of catch block we were seeing like
+
 
     //Build update employee Rest API
     @PutMapping("/{id}")
