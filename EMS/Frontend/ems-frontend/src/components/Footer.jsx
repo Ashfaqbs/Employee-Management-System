@@ -1,10 +1,18 @@
 import React from 'react';
 
 const Footer = () => {
+  const footerStyle = {
+    position: 'fixed',
+    bottom: '0',
+    width: '100vw ',
+    height: 'auto',
+    color: '#fff',
+  };
+
   return (
-    <footer className="footer mt-auto py-3 bg-light">
+    <footer style={footerStyle}>
       <div className="container">
-        <span className="text-muted">&copy;{new Date().getFullYear()} Your App Name | All rights reserved</span>
+        <span className="text-muted text-center">&copy;{new Date().getFullYear()} Your App Name | All rights reserved</span>
       </div>
     </footer>
   );
