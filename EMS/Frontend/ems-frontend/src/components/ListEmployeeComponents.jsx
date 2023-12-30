@@ -4,7 +4,6 @@ import loadingGif from '../assets/loader1.webp'
 //Aesc and Desc order feature
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 
-import { usePDF } from 'react-to-pdf';
 
 const ListEmployeeComponent = () => {
   const [tableData, settableData] = useState([]);
@@ -13,8 +12,7 @@ const ListEmployeeComponent = () => {
   //adding loader till the data is fetched 
   const [loading, setLoading] = useState(true); // Add loading state
 
-  const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
-  
+
   useEffect(() => {
     listEmployees()
       .then((response) => {
@@ -70,7 +68,7 @@ const ListEmployeeComponent = () => {
 
   return (
     <>
-      <section className=''>
+      <section className='' >
         <h2 className='text-center w-2'>List of Employees
         
         
@@ -81,12 +79,11 @@ const ListEmployeeComponent = () => {
                 >
 <br></br>
                    <button className='rounded-5  bg-black  text-white '> <h5>Export excel</h5>  </button>
-
                 </DownloadTableExcel>
         
          </h2>
 
-        <table className="table table-dark" ref={tableRef}>
+        <table className="table table-dark" ref={tableRef} >
           <thead>
             <tr>
               <th scope="col" onClick={() => requestSort('id')} className={getClassNamesFor('id')}>
