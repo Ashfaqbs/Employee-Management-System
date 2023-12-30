@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { listEmployees } from '../Services/EmployeeService';
-
+import loadingGif from '../assets/loader1.webp'
 //Aesc and Desc order feature
 
 const ListEmployeeComponent = () => {
@@ -58,7 +58,9 @@ const ListEmployeeComponent = () => {
 
   if (loading) {
     // Render a loading spinner or skeleton screen while data is being fetched
-    return <div>Loading...</div>; // You can replace this with a spinner or skeleton component
+    return  <div>
+    <img src={loadingGif} alt="Loading..." />
+  </div>; // You can replace this with a spinner or skeleton component
   }
 
 
