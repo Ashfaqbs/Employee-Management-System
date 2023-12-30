@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <HelloWorld />
       <ListEmployeeComponent />
       <Footer />
     </>
