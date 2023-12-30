@@ -20,22 +20,6 @@ const ListEmployeeComponent = () => {
         })
 
     }, [])
-
-
-    // const sampleData = [
-    //     { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com" },
-    //     { "id": 2, "firstName": "Jane", "lastName": "Smith", "email": "jane.smith@example.com" },
-    //     { "id": 3, "firstName": "Bob", "lastName": "Johnson", "email": "bob.johnson@example.com" },
-    //     { "id": 4, "firstName": "Alice", "lastName": "Williams", "email": "alice.williams@example.com" },
-    //     { "id": 5, "firstName": "Charlie", "lastName": "Brown", "email": "charlie.brown@example.com" },
-    //     { "id": 6, "firstName": "Eva", "lastName": "Green", "email": "eva.green@example.com" },
-    //     { "id": 7, "firstName": "Frank", "lastName": "Miller", "email": "frank.miller@example.com" },
-    //     { "id": 8, "firstName": "Grace", "lastName": "Turner", "email": "grace.turner@example.com" },
-    //     { "id": 9, "firstName": "Henry", "lastName": "Davis", "email": "henry.davis@example.com" },
-    //     { "id": 10, "firstName": "Ivy", "lastName": "Clark", "email": "ivy.clark@example.com" }
-    // ]
-
-
     return (
         <>
 
@@ -78,3 +62,19 @@ const ListEmployeeComponent = () => {
 }
 
 export default ListEmployeeComponent
+
+
+
+
+ // const sampleData = [
+    //     { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com" },
+    //     { "id": 2, "firstName": "Jane", "lastName": "Smith", "email": "jane.smith@example.com" },
+    //     { "id": 3, "firstName": "Bob", "lastName": "Johnson", "email": "bob.johnson@example.com" },
+    //     { "id": 4, "firstName": "Alice", "lastName": "Williams", "email": "alice.williams@example.com" },
+    //     { "id": 5, "firstName": "Charlie", "lastName": "Brown", "email": "charlie.brown@example.com" },
+    //     { "id": 6, "firstName": "Eva", "lastName": "Green", "email": "eva.green@example.com" },
+    //     { "id": 7, "firstName": "Frank", "lastName": "Miller", "email": "frank.miller@example.com" },
+    //     { "id": 8, "firstName": "Grace", "lastName": "Turner", "email": "grace.turner@example.com" },
+    //     { "id": 9, "firstName": "Henry", "lastName": "Davis", "email": "henry.davis@example.com" },
+    //     { "id": 10, "firstName": "Ivy", "lastName": "Clark", "email": "ivy.clark@example.com" }
+    // ]
