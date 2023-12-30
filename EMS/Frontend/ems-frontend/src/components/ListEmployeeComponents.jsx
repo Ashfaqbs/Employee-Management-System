@@ -58,7 +58,7 @@ const ListEmployeeComponent = () => {
 
   if (loading) {
     // Render a loading spinner or skeleton screen while data is being fetched
-    return  <div>
+    return  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
     <img src={loadingGif} alt="Loading..." />
   </div>; // You can replace this with a spinner or skeleton component
   }
