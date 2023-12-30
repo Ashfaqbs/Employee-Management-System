@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">  EMS</a>
+      <a className="navbar-brand" href="#">  EMS React And Springboot App</a>
       <button className="navbar-toggler" type="button" onClick={toggle}>
         <span className="navbar-toggler-icon"></span>
       </button>

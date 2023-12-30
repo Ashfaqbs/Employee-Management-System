@@ -41,7 +41,7 @@ public class EmployeeController {
     @GetMapping("/")
     public ResponseEntity<List<EmployeeDTO>>getAllEmployees() throws InterruptedException {
         List<EmployeeDTO> employeeDTO1=  employeeService.getAllEmployee();
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         return new ResponseEntity<>(employeeDTO1, HttpStatus.OK);
     }
     //Note when we ere returning HttpStatus.Found i.e status code will be 302 and for the above get and getall emp API's

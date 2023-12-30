@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <footer style={footerStyle}>
             <div className="container">
-                <span className="text-muted ">&copy;{new Date().getFullYear()} Your App Name | All rights reserved</span>
+                <span className="text-muted ">&copy;{new Date().getFullYear()} Ashfaq Dev | All rights reserved</span>
             </div>
         </footer>
     );
