@@ -68,7 +68,7 @@ const ListEmployeeComponent = () => {
   return (
     <>
       <section className=''>
-        <h2 className='text-center'>List of Employees
+        <h2 className='text-center w-2'>List of Employees
         
         
         <DownloadTableExcel
@@ -77,7 +77,7 @@ const ListEmployeeComponent = () => {
                     currentTableRef={tableRef.current}
                 >
 
-                   <button> Export excel </button>
+                   <button className='rounded-5  bg-black  text-white '> <h5>Export excel</h5>  </button>
 
                 </DownloadTableExcel>
         
