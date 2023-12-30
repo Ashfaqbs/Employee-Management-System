@@ -1,67 +1,161 @@
 import React, { useEffect, useState } from 'react'
 import { listEmployees } from '../Services/EmployeeService'
 
+import React, { useEffect, useState } from 'react';
+import { listEmployees } from '../Services/EmployeeService';
+
 const ListEmployeeComponent = () => {
+  const [tableData, settableData] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
 
-    const [tableData, settableData] = useState([])
+  useEffect(() => {
+    listEmployees()
+      .then((response) => {
+        settableData(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-    useEffect(() => {
-        // fetch('http://localhost:8080/api/v1/employees')           //api for the get request
-        // .then(response => response.json())
-        // .then((data) =>{
-        //      settableData(data)
-        //     console.log(data)
-        // });
+  const requestSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
 
-        listEmployees().then((response) => {
-            settableData(response.data)
-        }).catch((error) => {
-            console.error(error);
-        })
+  const getClassNamesFor = (name) => {
+    if (!sortConfig) {
+      return;
+    }
+    return sortConfig.key === name ? sortConfig.direction : undefined;
+  };
 
-    }, [])
-    return (
-        <>
+  const sortedData = () => {
+    if (!sortConfig) {
+      return tableData;
+    }
 
-            <section className=''>
-                <h2 className='text-center'>List of Employees</h2>
+    const sortedArray = [...tableData];
+    sortedArray.sort((a, b) => {
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
+      }
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+    return sortedArray;
+  };
 
-                <table className="table table-dark">
+  return (
+    <>
+      <section className=''>
+        <h2 className='text-center'>List of Employees</h2>
 
-                    <thead>
-                        <tr>
-                            <th scope="col">Sl No</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <table className="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col" onClick={() => requestSort('id')} className={getClassNamesFor('id')}>
+                Sl No
+              </th>
+              <th scope="col" onClick={() => requestSort('firstName')} className={getClassNamesFor('firstName')}>
+                First
+              </th>
+              <th scope="col" onClick={() => requestSort('lastName')} className={getClassNamesFor('lastName')}>
+                Last
+              </th>
+              <th scope="col" onClick={() => requestSort('email')} className={getClassNamesFor('email')}>
+                Email
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedData().map((data) => (
+              <tr key={data.id}>
+                <th scope="row">{data.id}</th>
+                <td>{data.firstName}</td>
+                <td>{data.lastName}</td>
+                <td>{data.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    </>
+  );
+};
+
+export default ListEmployeeComponent;
 
 
-                        {
-                            tableData.map((data) => (
-                                <tr key={data.id}>
-                                    <th scope="row">{data.id}</th>
-                                    <td>{data.firstName}</td>
-                                    <td>{data.lastName}</td>
-                                    <td>{data.email}</td>
-                                </tr>
-                            )
-                            )
-
-                        }
-
-                    </tbody>
-                </table>
-            </section>
 
 
-        </>
-    )
-}
 
-export default ListEmployeeComponent
+// const ListEmployeeComponent = () => {
+
+//     const [tableData, settableData] = useState([])
+
+//     useEffect(() => {
+//         // fetch('http://localhost:8080/api/v1/employees')           //api for the get request
+//         // .then(response => response.json())
+//         // .then((data) =>{
+//         //      settableData(data)
+//         //     console.log(data)
+//         // });
+
+//         listEmployees().then((response) => {
+//             settableData(response.data)
+//         }).catch((error) => {
+//             console.error(error);
+//         })
+
+//     }, [])
+//     return (
+//         <>
+
+//             <section className=''>
+//                 <h2 className='text-center'>List of Employees</h2>
+
+//                 <table className="table table-dark">
+
+//                     <thead>
+//                         <tr>
+//                             <th scope="col">Sl No</th>
+//                             <th scope="col">First</th>
+//                             <th scope="col">Last</th>
+//                             <th scope="col">Email</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+
+
+//                         {
+//                             tableData.map((data) => (
+//                                 <tr key={data.id}>
+//                                     <th scope="row">{data.id}</th>
+//                                     <td>{data.firstName}</td>
+//                                     <td>{data.lastName}</td>
+//                                     <td>{data.email}</td>
+//                                 </tr>
+//                             )
+//                             )
+
+//                         }
+
+//                     </tbody>
+//                 </table>
+//             </section>
+
+
+//         </>
+//     )
+// }
+
+// export default ListEmployeeComponent
 
 
 
