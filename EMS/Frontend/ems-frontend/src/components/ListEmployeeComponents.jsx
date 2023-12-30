@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import { listEmployees } from '../Services/EmployeeService';
 import loadingGif from '../assets/loader1.webp'
 //Aesc and Desc order feature
+import { DownloadTableExcel } from 'react-export-table-to-excel';
 
 const ListEmployeeComponent = () => {
   const [tableData, settableData] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
-
+  const tableRef = useRef(null);
   //adding loader till the data is fetched 
   const [loading, setLoading] = useState(true); // Add loading state
 
@@ -67,9 +68,22 @@ const ListEmployeeComponent = () => {
   return (
     <>
       <section className=''>
-        <h2 className='text-center'>List of Employees</h2>
+        <h2 className='text-center'>List of Employees
+        
+        
+        <DownloadTableExcel
+                    filename="users table"
+                    sheet="users"
+                    currentTableRef={tableRef.current}
+                >
 
-        <table className="table table-dark">
+                   <button> Export excel </button>
+
+                </DownloadTableExcel>
+        
+         </h2>
+
+        <table className="table table-dark" ref={tableRef}>
           <thead>
             <tr>
               <th scope="col" onClick={() => requestSort('id')} className={getClassNamesFor('id')}>
