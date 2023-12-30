@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { listEmployees } from '../Services/EmployeeService'
-
 import React, { useEffect, useState } from 'react';
 import { listEmployees } from '../Services/EmployeeService';
+
+
 
 const ListEmployeeComponent = () => {
   const [tableData, settableData] = useState([]);
@@ -94,7 +93,7 @@ export default ListEmployeeComponent;
 
 
 
-
+//Basic 
 // const ListEmployeeComponent = () => {
 
 //     const [tableData, settableData] = useState([])
