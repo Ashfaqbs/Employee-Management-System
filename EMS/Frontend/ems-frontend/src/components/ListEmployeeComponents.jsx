@@ -38,9 +38,10 @@ const ListEmployeeComponent = () => {
 
     return (
         <>
-            <table className="table table-dark">
-                <caption>List of Employees</caption>
+           <h2 className='text-center'>List of Employees</h2>
 
+            <table className="table table-dark">
+             
                 <thead>
                     <tr>
                         <th scope="col">Sl No</th>
