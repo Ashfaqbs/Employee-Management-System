@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+
+
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      setTheme('dark');
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', 'light');
+      setTheme('light');
+    }
+  };
+
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,6 +38,8 @@ const Navbar = () => {
             <a className="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
+        <button onClick={toggleTheme}>Toggle Theme</button>
+     <p>Current theme: {theme}</p>
       </div>
     </nav>
   );
