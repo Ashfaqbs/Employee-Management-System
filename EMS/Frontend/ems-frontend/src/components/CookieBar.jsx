@@ -17,7 +17,8 @@ function CookieBar() {
      console.log(`Current Location: ${currentLocation}`);
      console.log(`History Length: ${historyLength}`);
 
-
+     
+      
 
      const userAgent = navigator.userAgent;
      console.log(`User Agent: ${userAgent}`);
@@ -48,6 +49,9 @@ function CookieBar() {
      setShowCookieBar(false);
    };
   
+
+  
+
    if (!showCookieBar) {
      return null;
    }
@@ -68,3 +72,18 @@ function CookieBar() {
 }
 
 export default CookieBar;
+
+
+
+// async function getUserLocation() {
+//     try {
+//       const response = await fetch('https://ipinfo.io/json');
+//       const data = await response.json();
+//       console.log(`Location: ${data.city}, ${data.region}, ${data.country}`);
+//     } catch (error) {
+//       console.error('Error fetching location:', error);
+//     }
+//   }
+  
+//   // Call the function to get user location
+//   getUserLocation();
