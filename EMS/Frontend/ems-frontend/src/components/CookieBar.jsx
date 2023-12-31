@@ -1,20 +1,26 @@
 import { useState } from "react";
 import Cookies from 'js-cookie';
-
-export default function CookieBar() {
+function CookieBar() {
     const [isCookieSet, setCookie] = useState(Cookies.get("cookieConsent"));
+    const [showCookieBar, setShowCookieBar] = useState(true);
    
     // Function to handle accepting cookies
     const handleAcceptCookies = () => {
       Cookies.set("cookieConsent", true);
       setCookie(true);
+      setShowCookieBar(false);
     };
    
     // Function to handle rejecting cookies
     const handleRejectCookies = () => {
       Cookies.remove("cookieConsent");
       setCookie(false);
+      setShowCookieBar(false);
     };
+   
+    if (!showCookieBar) {
+      return null;
+    }
    
     return (
       <div>
@@ -31,3 +37,4 @@ export default function CookieBar() {
     );
    }
    
+   export default CookieBar;
