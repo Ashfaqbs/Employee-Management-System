@@ -52,6 +52,8 @@
 
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import sun from '../assets/sun.png'
+import moon from '../assets/moon.png'
 
 const Navbar = () => {
  const [isOpen, setIsOpen] = useState(false);
@@ -88,7 +90,9 @@ const Navbar = () => {
          </li>
        </ul>
        <button className="btn btn-outline-primary ms-auto btn-pill" onClick={toggleTheme}>Toggle Theme</button>
-       <h6 style={{ margin: '0.5em' }}>{theme}</h6>
+       {/* <h6 style={{ margin: '0.5em' }}>{theme}</h6> */}
+
+       {theme === 'light' ? <img src={moon} alt="moon" /> : <img src={sun} alt="sun" />}
      </div>
    </nav>
  );
