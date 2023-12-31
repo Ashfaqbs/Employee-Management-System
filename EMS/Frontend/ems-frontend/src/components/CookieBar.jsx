@@ -9,7 +9,7 @@ function CookieBar() {
    const handleAcceptCookies = () => {
      // Collect browser details
      const currentLocation = window.location.href;
-     const historyLength = window.history.length;
+     const historyLength = window.history;
      // Collect username (replace with actual method of getting username)
 
      // Print details to console
