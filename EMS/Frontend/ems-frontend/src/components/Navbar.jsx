@@ -10,6 +10,8 @@ const Navbar = () => {
   const [theme, setTheme] = useState('light');
   const toggleTheme = () => {
     if (theme === 'light') {
+      
+      document.querySelector('[data-bs-theme]').removeAttribute
       document.documentElement.setAttribute('data-bs-theme', 'dark');
       setTheme('dark');
     } else {
@@ -39,7 +41,7 @@ const Navbar = () => {
           </li>
         </ul>
         <button  className="btn btn-outline-primary ms-auto btn-pill " onClick={toggleTheme}>Toggle Theme</button>
-        <h6 style={{ fontSize: '0.5em' }}>{theme}</h6>
+        <h6 style={{ margin: '0.5em' }}>{theme}</h6>
       </div>
     </nav>
   );
