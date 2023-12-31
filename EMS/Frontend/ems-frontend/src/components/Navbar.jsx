@@ -92,7 +92,7 @@ const Navbar = () => {
        <button className="btn btn-outline-primary ms-auto btn-pill" onClick={toggleTheme}>Toggle Theme</button>
        {/* <h6 style={{ margin: '0.5em' }}>{theme}</h6> */}
 
-       {theme === 'light' ? <img src={moon} alt="moon" /> : <img src={sun} alt="sun" />}
+       {theme === 'light' ? <img src={moon} alt="moon" style={{ width: '25px', height: '25px' }} /> : <img src={sun} alt="sun" style={{ width: '25px', height: '25px' }} />}
      </div>
    </nav>
  );

@@ -83,7 +83,7 @@ const ListEmployeeComponent = () => {
         
          </h2>
 
-        <table className="table table-dark" ref={tableRef} >
+        <table className="table " ref={tableRef} >
           <thead>
             <tr>
               <th scope="col" onClick={() => requestSort('id')} className={getClassNamesFor('id')}>
