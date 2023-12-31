@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleTheme = () => {
     if (theme === 'light') {
       
-      document.querySelector('[data-bs-theme]').removeAttribute
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
       document.documentElement.setAttribute('data-bs-theme', 'dark');
       setTheme('dark');
     } else {
