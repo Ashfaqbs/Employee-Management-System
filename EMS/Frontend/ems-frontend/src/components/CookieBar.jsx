@@ -1,4 +1,7 @@
-function CookieBar() {
+import { useState } from "react";
+import Cookies from 'js-cookie';
+
+export default function CookieBar() {
     const [isCookieSet, setCookie] = useState(Cookies.get("cookieConsent"));
    
     // Function to handle accepting cookies
