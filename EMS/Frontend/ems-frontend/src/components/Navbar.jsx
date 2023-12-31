@@ -38,8 +38,8 @@ const Navbar = () => {
             <a className="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
-        <button onClick={toggleTheme}>Toggle Theme</button>
-     <p>Current theme: {theme}</p>
+        <button  className="btn btn-outline-primary ms-auto btn-pill " onClick={toggleTheme}>Toggle Theme</button>
+        <h6 style={{ fontSize: '0.5em' }}>{theme}</h6>
       </div>
     </nav>
   );
