@@ -16,7 +16,11 @@ function App() {
       <Navbar />
 <Routes>
 
-<ListEmployeeComponent />
+
+//base url 
+<Route path='/' element={<ListEmployeeComponent />} ></Route>
+<Route path='/employees' element={<ListEmployeeComponent />} ></Route>
+
 
 </Routes>
       
