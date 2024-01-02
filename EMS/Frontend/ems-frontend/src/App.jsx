@@ -17,7 +17,7 @@ function App() {
 <Routes>
 
 
-//base url 
+//base url http://localhost:3000/
 <Route path='/' element={<ListEmployeeComponent />} ></Route>
 <Route path='/employees' element={<ListEmployeeComponent />} ></Route>
 
