@@ -1,6 +1,9 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { listEmployees } from '../Services/EmployeeService';
 import loadingGif from '../assets/loader1.webp'
+// import loadingGif from '../assets/loader2.gif'
+
+
 //Aesc and Desc order feature
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 
