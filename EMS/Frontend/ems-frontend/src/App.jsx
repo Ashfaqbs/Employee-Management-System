@@ -4,7 +4,7 @@ import ListEmployeeComponent from './components/ListEmployeeComponents'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieBar from './components/CookieBar'
-import {BrowserRouter ,Routes} from 'react-router-dom'
+import {BrowserRouter ,Routes,Route} from 'react-router-dom'
 
 
 function App() {
@@ -12,11 +12,20 @@ function App() {
 
   return (
     <>
-      
+      <BrowserRouter>
       <Navbar />
-      <ListEmployeeComponent />
+<Routes>
+
+<ListEmployeeComponent />
+
+</Routes>
+      
+
+
+      
       <CookieBar/>
       <Footer />
+      </BrowserRouter> 
     </>
   )
 }
