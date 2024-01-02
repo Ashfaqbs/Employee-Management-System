@@ -54,7 +54,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import sun from '../assets/sun.png'
 import moon from '../assets/moon.png'
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);
@@ -80,7 +80,7 @@ const Navbar = () => {
      <div className={isOpen ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'} id="navbarNav">
        <ul className="navbar-nav ml-auto">
          <li className="nav-item active">
-           <a className="nav-link" Link='/'>Home</a>
+           <a className="nav-link" Link='/employees'>Home</a>
          </li>
          <li className="nav-item">
            <a className="nav-link" href="#">About</a>
