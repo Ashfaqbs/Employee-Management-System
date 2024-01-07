@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { listEmployees } from '../Services/EmployeeService';
 import loadingGif from '../assets/loader1.webp'
 // import loadingGif from '../assets/loader2.gif'
@@ -6,7 +6,8 @@ import loadingGif from '../assets/loader1.webp'
 
 //Aesc and Desc order feature
 import { DownloadTableExcel } from 'react-export-table-to-excel';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { deleteEmp } from '../Services/EmployeeService';
 
 const ListEmployeeComponent = () => {
   const [tableData, settableData] = useState([]);
@@ -15,7 +16,10 @@ const ListEmployeeComponent = () => {
   //adding loader till the data is fetched 
   const [loading, setLoading] = useState(true); // Add loading state
 
-
+  // function deleteEmpbyId(eid) {
+  //   deleteEmp(eid)
+  // }
+  // const navigator1 = useNavigate(); 
   useEffect(() => {
     listEmployees()
       .then((response) => {
@@ -26,6 +30,9 @@ const ListEmployeeComponent = () => {
         console.error(error);
         setLoading(false);
       });
+
+     
+
   }, []);
 
   const requestSort = (key) => {
@@ -63,28 +70,41 @@ const ListEmployeeComponent = () => {
 
   if (loading) {
     // Render a loading spinner or skeleton screen while data is being fetched
-    return  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-    <img src={loadingGif} alt="Loading..." />
-  </div>; // You can replace this with a spinner or skeleton component
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <img src={loadingGif} alt="Loading..." />
+    </div>; // You can replace this with a spinner or skeleton component
   }
 
+
+
+  
+
+  // useEffect(() => {
+   
+  // }, [])
+  
 
   return (
     <>
       <section className='' >
         <h2 className='text-center w-2'>List of Employees
-        
-        
-        <DownloadTableExcel
-                    filename="users table"
-                    sheet="users"
-                    currentTableRef={tableRef.current}
-                >
-<br></br>
-                   <button className='rounded-5  bg-black  text-white '> <h5>Export excel</h5>  </button>
-                </DownloadTableExcel>
-        
-         </h2>
+          {/* one Way for navigation */}
+
+          <Link to='/AddEmployee'><button className='btn btn-primary rounded m-2'
+          > Add Employee</button> </Link>
+          {/* 2nd Way for navigation */}
+          {/* <button onClick={addNewEmp}>Add Employee</button> */}
+
+          <DownloadTableExcel
+            filename="users table"
+            sheet="users"
+            currentTableRef={tableRef.current}
+          >
+            <br></br>
+            <button className='rounded-5  bg-black  text-white '> <h5>Export excel</h5>  </button>
+          </DownloadTableExcel>
+
+        </h2>
 
         <table className="table " ref={tableRef} >
           <thead>
@@ -101,6 +121,11 @@ const ListEmployeeComponent = () => {
               <th scope="col" onClick={() => requestSort('email')} className={getClassNamesFor('email')}>
                 Email
               </th>
+
+              <th scope="col" >
+                Delete
+              </th>
+
             </tr>
           </thead>
           <tbody>
@@ -110,6 +135,7 @@ const ListEmployeeComponent = () => {
                 <td>{data.firstName}</td>
                 <td>{data.lastName}</td>
                 <td>{data.email}</td>
+                {/* <td onClick={() => { deleteEmpbyId(data.id) }}>X</td> */}
               </tr>
             ))}
           </tbody>
@@ -124,7 +150,7 @@ export default ListEmployeeComponent;
 
 
 
-//Basic 
+//Basic
 // const ListEmployeeComponent = () => {
 
 //     const [tableData, settableData] = useState([])
@@ -190,15 +216,15 @@ export default ListEmployeeComponent;
 
 
 
- // const sampleData = [
-    //     { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com" },
-    //     { "id": 2, "firstName": "Jane", "lastName": "Smith", "email": "jane.smith@example.com" },
-    //     { "id": 3, "firstName": "Bob", "lastName": "Johnson", "email": "bob.johnson@example.com" },
-    //     { "id": 4, "firstName": "Alice", "lastName": "Williams", "email": "alice.williams@example.com" },
-    //     { "id": 5, "firstName": "Charlie", "lastName": "Brown", "email": "charlie.brown@example.com" },
-    //     { "id": 6, "firstName": "Eva", "lastName": "Green", "email": "eva.green@example.com" },
-    //     { "id": 7, "firstName": "Frank", "lastName": "Miller", "email": "frank.miller@example.com" },
-    //     { "id": 8, "firstName": "Grace", "lastName": "Turner", "email": "grace.turner@example.com" },
-    //     { "id": 9, "firstName": "Henry", "lastName": "Davis", "email": "henry.davis@example.com" },
-    //     { "id": 10, "firstName": "Ivy", "lastName": "Clark", "email": "ivy.clark@example.com" }
-    // ]
+// const sampleData = [
+//     { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com" },
+//     { "id": 2, "firstName": "Jane", "lastName": "Smith", "email": "jane.smith@example.com" },
+//     { "id": 3, "firstName": "Bob", "lastName": "Johnson", "email": "bob.johnson@example.com" },
+//     { "id": 4, "firstName": "Alice", "lastName": "Williams", "email": "alice.williams@example.com" },
+//     { "id": 5, "firstName": "Charlie", "lastName": "Brown", "email": "charlie.brown@example.com" },
+//     { "id": 6, "firstName": "Eva", "lastName": "Green", "email": "eva.green@example.com" },
+//     { "id": 7, "firstName": "Frank", "lastName": "Miller", "email": "frank.miller@example.com" },
+//     { "id": 8, "firstName": "Grace", "lastName": "Turner", "email": "grace.turner@example.com" },
+//     { "id": 9, "firstName": "Henry", "lastName": "Davis", "email": "henry.davis@example.com" },
+//     { "id": 10, "firstName": "Ivy", "lastName": "Clark", "email": "ivy.clark@example.com" }
+// ]

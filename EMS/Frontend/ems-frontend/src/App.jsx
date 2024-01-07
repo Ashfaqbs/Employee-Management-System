@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieBar from './components/CookieBar'
 import {BrowserRouter ,Routes,Route} from 'react-router-dom'
+import AddEmployee from './components/AddEmployee'
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
 <Route path='/' element={<ListEmployeeComponent />} ></Route>
 {/* http://localhost:3000/employees  */}
 <Route path='/employees' element={<ListEmployeeComponent />} ></Route>
-
-
+{/* http://localhost:3000/AddEmployee  */}
+<Route path='/AddEmployee' element={<AddEmployee />} ></Route>
 </Routes>
       
 

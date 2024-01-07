@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("api/v1/employees/")
+@RequestMapping("api/v1/employees")
 
 public class EmployeeController {
 
@@ -27,6 +27,9 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<EmployeeDTO>creteEmployee(@RequestBody EmployeeDTO employeeDTO)
     {
+
+        System.out.println(employeeDTO +" Object received from frontend");
+
        EmployeeDTO employeeDTO1=  employeeService.createEmployee(employeeDTO);
         return new ResponseEntity<>(employeeDTO1, HttpStatus.CREATED);
     }
@@ -38,7 +41,7 @@ public class EmployeeController {
         EmployeeDTO employeeDTO1=  employeeService.getEmployeeById(id);
         return new ResponseEntity<>(employeeDTO1, HttpStatus.OK);
     }
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<EmployeeDTO>>getAllEmployees() throws InterruptedException {
         List<EmployeeDTO> employeeDTO1=  employeeService.getAllEmployee();
 //        Thread.sleep(2000);
