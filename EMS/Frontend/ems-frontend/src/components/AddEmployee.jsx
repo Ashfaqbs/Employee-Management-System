@@ -59,7 +59,7 @@ const AddEmployee = () => {
             return;
         }
 
-        if (!/^[a-zA-Z]+$/.test(firstName) || !/^[a-zA-Z]+$/.test(lastName)) {
+        if (/^[a-zA-Z]+$/.test(firstName) || /^[a-zA-Z]+$/.test(lastName)) {
             setError('First name and last name should contain only characters.');
             return;
         }
@@ -93,7 +93,7 @@ const AddEmployee = () => {
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
                         <input type="text" className="form-control" id="firstName" placeholder="First name" name="firstName"
-                            onChange={(e) => { setfirstName(e.target.value) }} />
+                            onChange={(e) => { setFirstName(e.target.value) }} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="lastName">Last Name</label>
