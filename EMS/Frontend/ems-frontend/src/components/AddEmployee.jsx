@@ -58,11 +58,16 @@ const AddEmployee = () => {
             setError('All fields are required.');
             return;
         }
-
-        if (/^[a-zA-Z]+$/.test(firstName) || /^[a-zA-Z]+$/.test(lastName)) {
+        if (!/^[a-zA-Z]+$/.test(firstName) || !/^[a-zA-Z]+$/.test(lastName)) {
             setError('First name and last name should contain only characters.');
             return;
         }
+
+        if (!/^[a-zA-Z]+$/.test(firstName) || !/^[a-zA-Z]+$/.test(lastName)) {
+            setError('First name and last name should not contain numbers or special characters.');
+            return;
+        }
+
 
         // If validation passes, clear any previous errors
         setError('');
