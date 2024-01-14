@@ -20,6 +20,13 @@ const ListEmployeeComponent = () => {
 
   const navigator = useNavigate();
   useEffect(() => {
+
+    getAllEmp()
+
+
+  }, []);
+
+  function getAllEmp() {
     listEmployees()
       .then((response) => {
         settableData(response.data);
@@ -29,10 +36,7 @@ const ListEmployeeComponent = () => {
         console.error(error);
         setLoading(false);
       });
-
-
-
-  }, []);
+  }
 
   const requestSort = (key) => {
     let direction = 'asc';
@@ -85,6 +89,7 @@ const ListEmployeeComponent = () => {
 
 
     deleteEmp(id).then((response) => {
+      getAllEmp()
       console.log(response)
     }).catch(error => {
       console.log(error)
