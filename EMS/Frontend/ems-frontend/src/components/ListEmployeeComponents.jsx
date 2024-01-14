@@ -79,6 +79,10 @@ const ListEmployeeComponent = () => {
     console.log(id)
   }
 
+  const handleDelete=(id)=>{
+
+    console.log(id)
+  }
 
 
   return (
@@ -136,6 +140,7 @@ const ListEmployeeComponent = () => {
                 <td>{data.email}</td>
                 {/* <td onClick={() => { deleteEmpbyId(data.id) }}>X</td> */}
                 <td><button className='btn btn-info ' onClick={() => handleUpdate(data.id)} >Update</button></td>
+                <td><button className='btn btn-info ' onClick={() => handleDelete(data.id)} >Delete</button></td>
               </tr>
             ))}
           </tbody>
