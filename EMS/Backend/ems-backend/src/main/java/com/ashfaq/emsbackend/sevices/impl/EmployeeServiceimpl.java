@@ -60,8 +60,8 @@ public class EmployeeServiceimpl implements IEmployeeService {
 
         Employee employee = employeeRepository.findById(emplId).orElseThrow(() -> new ResourceNotFoundException("Employee with id : " + emplId + " is not found"));
         employee.setFirstName(employeeDTO.getFirstName());
-        employee.setLastName(employee.getLastName());
-        employee.setEmail(employee.getEmail());
+        employee.setLastName(employeeDTO.getLastName());
+        employee.setEmail(employeeDTO.getEmail());
 
         Employee updatedEmployee = employeeRepository.save(employee);//save or update if id exists update else save
         return EmployeeMapper.mapToEmployeeDTO(updatedEmployee);

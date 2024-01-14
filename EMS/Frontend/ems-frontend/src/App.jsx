@@ -4,34 +4,37 @@ import ListEmployeeComponent from './components/ListEmployeeComponents'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieBar from './components/CookieBar'
-import {BrowserRouter ,Routes,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AddEmployee from './components/AddEmployee'
 
 
 function App() {
-  
+
 
   return (
     <>
       <BrowserRouter>
-      <Navbar />
-<Routes>
+        <Navbar />
+        <Routes>
 
 
-{/* //base url http://localhost:3000/ */}
-<Route path='/' element={<ListEmployeeComponent />} ></Route>
-{/* http://localhost:3000/employees  */}
-<Route path='/employees' element={<ListEmployeeComponent />} ></Route>
-{/* http://localhost:3000/AddEmployee  */}
-<Route path='/AddEmployee' element={<AddEmployee />} ></Route>
-</Routes>
-      
+          {/* //base url http://localhost:3000/ */}
+          <Route path='/' element={<ListEmployeeComponent />} ></Route>
+          {/* http://localhost:3000/employees  */}
+          <Route path='/employees' element={<ListEmployeeComponent />} ></Route>
+          {/* http://localhost:3000/AddEmployee  */}
+          <Route path='/AddEmployee' element={<AddEmployee />} ></Route>
+
+          {/* http://localhost:3000/editEmployee/id  */}
+          <Route path='/editEmployee/:id' element={<AddEmployee />} ></Route>
+        </Routes>
 
 
-      
-      <CookieBar/>
-      <Footer />
-      </BrowserRouter> 
+
+
+        <CookieBar />
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }

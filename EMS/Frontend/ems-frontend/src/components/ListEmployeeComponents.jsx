@@ -16,10 +16,9 @@ const ListEmployeeComponent = () => {
   //adding loader till the data is fetched 
   const [loading, setLoading] = useState(true); // Add loading state
 
-  // function deleteEmpbyId(eid) {
-  //   deleteEmp(eid)
-  // }
-  // const navigator1 = useNavigate(); 
+
+
+  const navigator = useNavigate();
   useEffect(() => {
     listEmployees()
       .then((response) => {
@@ -31,7 +30,7 @@ const ListEmployeeComponent = () => {
         setLoading(false);
       });
 
-     
+
 
   }, []);
 
@@ -75,14 +74,12 @@ const ListEmployeeComponent = () => {
     </div>; // You can replace this with a spinner or skeleton component
   }
 
+  const handleUpdate = (id) => {
+    navigator(`/editEmployee/${id}`)
+    console.log(id)
+  }
 
 
-  
-
-  // useEffect(() => {
-   
-  // }, [])
-  
 
   return (
     <>
@@ -90,8 +87,7 @@ const ListEmployeeComponent = () => {
         <h2 className='text-center w-2'>List of Employees
           {/* one Way for navigation */}
 
-          <Link to='/AddEmployee'><button className='btn btn-primary rounded m-2'
-          > Add Employee</button> </Link>
+
           {/* 2nd Way for navigation */}
           {/* <button onClick={addNewEmp}>Add Employee</button> */}
 
@@ -105,6 +101,9 @@ const ListEmployeeComponent = () => {
           </DownloadTableExcel>
 
         </h2>
+
+        <Link to='/AddEmployee'><button className='btn btn-primary rounded m-2'
+        > Add Employee</button> </Link>
 
         <table className="table " ref={tableRef} >
           <thead>
@@ -123,7 +122,7 @@ const ListEmployeeComponent = () => {
               </th>
 
               <th scope="col" >
-                Delete
+                Action
               </th>
 
             </tr>
@@ -136,6 +135,7 @@ const ListEmployeeComponent = () => {
                 <td>{data.lastName}</td>
                 <td>{data.email}</td>
                 {/* <td onClick={() => { deleteEmpbyId(data.id) }}>X</td> */}
+                <td><button className='btn btn-info ' onClick={() => handleUpdate(data.id)} >Update</button></td>
               </tr>
             ))}
           </tbody>

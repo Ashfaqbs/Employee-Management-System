@@ -72,6 +72,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO> updateEmployeeById(@PathVariable("id") long id, @RequestBody EmployeeDTO employeeDTO)
     {
           EmployeeDTO updatedEmployeeDTO = employeeService.updateEmployee(id,employeeDTO);
+          System.out.println(updatedEmployeeDTO);
           return ResponseEntity.ok(updatedEmployeeDTO);
     }
 
